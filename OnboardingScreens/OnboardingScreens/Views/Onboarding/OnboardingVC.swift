@@ -13,6 +13,16 @@ class OnboardingVC: UIViewController {
     @IBOutlet var pageController: UIPageControl!
     
     var slides: [OnboardingSlide] = []
+    var currentPage = 0 {
+        didSet {
+            pageController.currentPage = currentPage
+            if currentPage == slides.count - 1 {
+                btnNext.setTitle("Get Started", for: .normal)
+            }else{
+                btnNext.setTitle("Next", for: .normal)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +40,19 @@ class OnboardingVC: UIViewController {
     }
 
     @IBAction func btnNextClicked(_ sender: Any) {
+        if currentPage != slides.count - 1 {
+            currentPage += 1
+            let indexPath = IndexPath(item: currentPage, section: 0)
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }else{
+            let controller = storyboard?.instantiateViewController(withIdentifier: "toHomeVC") as! UINavigationController
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .flipHorizontal
+            present(controller, animated: true)
+        }
         
+        
+
     }
     
 }
@@ -53,5 +75,9 @@ extension OnboardingVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        currentPage = Int(scrollView.contentOffset.x / width)
+    }
     
 }

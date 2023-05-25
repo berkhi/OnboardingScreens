@@ -109,7 +109,7 @@
                                     <action selector="btnNextClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fOD-62-wVo"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AsU-O8-qd8">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AsU-O8-qd8">
                                 <rect key="frame" x="138.66666666666666" y="686" width="115.66666666666666" height="26"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGray5Color"/>
                                 <color key="currentPageIndicatorTintColor" red="0.3273716867" green="0.1871420741" blue="0.65251177549999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -137,6 +137,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="64.885496183206101" y="-2.1126760563380285"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="qps-Ba-UfC">
+            <objects>
+                <viewController id="Dvh-DT-GZO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fMY-bc-B1c">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="n5J-60-sxK"/>
+                        <color key="backgroundColor" red="0.3273716867" green="0.1871420741" blue="0.65251177549999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="6Tl-yF-xVo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ygg-tV-HeB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2087.7862595419847" y="-7.042253521126761"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nbt-qa-3ck">
+            <objects>
+                <navigationController storyboardIdentifier="toHomeVC" automaticallyAdjustsScrollViewInsets="NO" id="qtz-x7-U0G" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="MbQ-Rv-1i0">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Dvh-DT-GZO" kind="relationship" relationship="rootViewController" id="fUt-0P-lWr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IyN-Y3-AzM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1161.0687022900763" y="-7.042253521126761"/>
         </scene>
     </scenes>
     <resources>
